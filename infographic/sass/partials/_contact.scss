@@ -1,0 +1,83 @@
+/*#####SECTION CONTACT#####*/
+
+.contact-details {
+   height: 100%;
+   width: 100%;
+   margin-left: 0;
+
+   h3 {
+       text-align: center;
+   }
+
+   p {
+       font-size: 1.25vw;
+       font-weight: 500;
+   }
+
+
+   .bigbox {
+      @extend %striped;
+   }
+
+   .phonebg, .boxphone {
+       position: absolute;
+       top: 12.5%;
+       left: 75%;
+       z-index: 50;
+   }
+
+   .phonebg {
+      @extend %striped-cover;
+      @extend %shadow;
+   }
+
+   .boxphone {
+       background-size: 100% 100%;
+       background-repeat: no-repeat;
+       background-image: url("../img/phone.png");
+
+       .boxdial {
+           height: 42%;
+           width: 42%;
+           background-size: 100% 100%;
+           background-repeat: no-repeat;
+           background-image: url("../img/dial.png");
+           animation-name: phonedial;
+           animation-duration: 2s;
+           animation-iteration-count: infinite;
+           animation-timing-function: linear;
+
+           &:hover {
+               animation-direction: reverse;
+           }
+       }
+   }
+}
+
+.contact-container {
+   @extend %content-centered;
+}
+
+.phonenumber, .phonenumber-small {
+   background-color: $red;
+   @extend %shadow;
+}
+
+.email, .email-small {
+   background-color: $mustard;
+   @extend %shadow;
+}
+
+.phonenumber, .email {
+    z-index: 52;
+}
+
+.phonenumber-small {
+    z-index: 2;
+    display: none;
+}
+
+.email-small {
+    z-index: 2;
+    display: none;
+}

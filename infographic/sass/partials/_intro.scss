@@ -1,0 +1,139 @@
+
+.intro-container {
+   width:100%;
+
+   .intro {
+      @extend %flex-center;
+      padding: 6vw 0;
+      .leftside {
+         @extend %downer2;
+      }
+      .rightside {
+         @extend %liftmeup2;
+      }
+
+      .hellobox {
+         @extend %content-centered;
+         height: 7.5vw;
+         width: 100%;
+
+         h1 {
+            margin-bottom: 1vw;
+         }
+      }
+
+      h2 {
+         font-size: 3vw;
+         @extend %elements-font;
+         margin-top: 0;
+         margin-bottom: 0;
+      }
+
+      .boxglasses {
+         background-color: $dgrey;
+         background-size: 100% 50%;
+         background-repeat: no-repeat;
+         background-image: url("../img/nerdybb.png");
+
+         .eye {
+            position: absolute;
+            top:15%;
+            height: 20%;
+            width: 20%;
+            background-color: #ffffff;
+            border-radius: 50%;
+
+            .pupil {
+               position: absolute;
+               height: 50%;
+               width: 50%;
+               background-color: $dgrey;
+               border-radius: 50%;
+               top: 50%;
+               left: 25%;
+               transform-origin: 50% 0 0;
+            }
+         }
+
+         #eye1 {
+            left: 15%;
+         }
+
+         #eye2 {
+            right: 15%;
+         }
+
+         .glasses-content {
+            background-color: $dgrey;
+            position: absolute;
+            top: 49%;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            @extend %flex-center;
+            align-items: center;
+
+            h2 {
+               color: #ffffff;
+            }
+         }
+      }
+
+      .boxjob {
+         background-color: #f8f8f8;
+         transition: box-shadow 0.3s;
+         cursor: pointer;
+         @extend %shadow;
+         @extend %striped-cover;
+      }
+
+      .boxheart {
+         transition: box-shadow 0.3s;
+         @extend %shadow;
+         display:block;
+
+         .hand-container, .tolove {
+            position: absolute;
+            cursor: pointer;
+         }
+
+         .hand-container {
+            @extend %striped-cover;
+            opacity: 0;
+            transition: opacity 1.5s;
+
+            .hand {
+               background-size: 100% 100%;
+               background-image: url("../img/hand.png");
+               transition: transform 1.5s;
+            }
+
+         }
+
+         .tolove {
+            background-size: 100% 100%;
+            background-image: url("../img/heart.png");
+            transition: transform 1.5s;
+
+            h2 {
+               color: #ff5851;
+            }
+         }
+
+      }
+      .boxmeetme {
+         a {
+            position: absolute;
+            top: 18%;
+            color: #ffffff;
+            @extend %shadow;
+            transition: transform 1.5s;
+         }
+      }
+   }
+
+   .tolovemove {
+      box-shadow: none;
+      transform: translateY(-100%);
+   }
+}

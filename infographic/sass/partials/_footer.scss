@@ -1,0 +1,41 @@
+footer {
+   .section-header {
+       width: 100%;
+   }
+
+   .container {
+       width: 100%;
+       min-height: 100px;
+       background-color: #1C1B20;
+       margin-bottom: 0;
+
+       .flex-container {
+           width: 90%;
+           height: 100%;
+           align-items: center;
+           flex-direction: column;
+
+
+       }
+   }
+}
+
+.author {
+    margin-top: 5vh;
+
+    p {
+       color: #f8f8f8;
+       text-align: center;
+       font-size: 14px;
+    }
+
+}
+
+
+.disclaimer p {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    color: #717171;
+    font-size: 11px;
+    text-align: center;
+}
