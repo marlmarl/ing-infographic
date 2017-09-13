@@ -1,0 +1,79 @@
+<script>
+/**
+ * I18nBehavior
+ * @polymerBehavior I18nBehavior
+ */
+I18nBehavior = {
+    properties: {
+        dictionary: {
+            type: String,
+            value: 'en-au',
+            notify: true,
+            observer: 'dictionaryChanged'
+        },
+        content: {
+            type: Object,
+            notify: true,
+            value: function() {
+                return {};
+            }
+        },
+        i18n: {
+            type: Object,
+            notify: true
+        },
+        currencySymbolCodeMapping: {
+            type: Object,
+            value: {
+                "en-au": 36,
+                "de-de": 8364,
+                "nl-nl": 8364,
+                "nl-be": 8364
+            }
+        },
+        currencySymbolCode: {
+            type: String,
+            value: "$",
+            notify:true
+        }
+    },
+    handlei18nChange: function (e, detail, sender) {
+        this.dictionary = detail;
+    },
+    ready: function() {
+        if (this.i18n[this.dictionary]) {
+            this.content = this.i18n[this.dictionary];
+        } else {
+            this.content = this.i18n['en‐au'];
+        }
+        this.addDefaults();
+    },
+    dictionaryChanged: function() {
+        if (this.i18n) {
+            if (this.i18n[this.dictionary]) {
+                this.content = this.i18n[this.dictionary];
+            } else {
+                this.content = this.i18n['en‐au'];
+            }
+        }
+        this.addDefaults();
+    },
+    addDefaults: function() {
+        if (this.content) {
+            this.content.globals = {
+                "yes": "Yes",
+                "no": "No",
+                "na": "N/A"
+            };
+            this.content.error = {
+                "global": "Sorry, we should be up again shortly. Need help now? Call us on 133 464.",
+                "offline": "No internet connection available. Please try again later."
+            }
+        }
+    },
+    i18nSignal: function(e, detail, sender) {
+        this.dictionary = detail;
+        this.currencySymbolCode = String.fromCharCode(this.currencySymbolCodeMapping[this.dictionary]);
+    }
+}
+</script>

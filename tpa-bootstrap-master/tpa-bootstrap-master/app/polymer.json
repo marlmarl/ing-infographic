@@ -1,0 +1,14 @@
+{
+    "fragments" : [
+        "elements/tpa-pages/tpa-daily-banking.html",
+        "elements/tpa-pages/tpa-contact-page.html",
+        "elements/tpa-pages/tpa-insurance-page.html",
+        "elements/tpa-pages/tpa-loans-page.html",
+        "elements/tpa-pages/tpa-mortgage-page.html",
+        "elements/tpa-pages/tpa-savingsgoals-page.html",
+        "elements/tpa-pages/tpa-settings-page.html",
+        "elements/tpa-pages/tpa-trading-page.html",
+        "elements/tpa-pages/tpa-user-page.html",
+        "elements/tpa-pages/tpa-feedback-page.html"
+    ]
+}

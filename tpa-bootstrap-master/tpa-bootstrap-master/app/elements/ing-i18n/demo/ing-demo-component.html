@@ -1,0 +1,47 @@
+<link rel="import" href="ing-demo-i18n.html">
+<link rel="import" href="../../polymer/paper-button/paper-button.html">
+<link rel="import" href="../../ing-style/ing-shared-styles.html">
+
+<dom-module id="ing-demo-component">
+    <template>
+        <style include="ing-shared-styles"></style>
+        <ing-demo-i18n id="i18n" content="{{i18ncontent}}"></ing-demo-i18n>
+
+        <paper-button raised on-click="updateLanguage" data-language="en-au">English</paper-button>
+        <paper-button raised on-click="updateLanguage" data-language="en-es">Spanish</paper-button>
+
+        <div>{{i18ncontent.testMessages}}</div>
+        <div>{{i18ncontent.testNestedMessage.nestedMessage}}</div>
+        <div>{{i18ncontent.test-dashes}}</div>
+        <div>{{testDashProperty}}</div>
+    </template>
+</dom-module>
+
+<script>
+Polymer({
+    is: 'ing-demo-component',
+    properties: {
+        i18ncontent: {
+            type: Object,
+            notify: true
+        },
+        testDashProperty: {
+            tpye: String,
+            notify: true,
+            computed: 'geti18n(i18ncontent)'
+        }
+    },
+    ready: function() {
+    },
+    geti18n: function(){
+        return this.i18ncontent['test-dashes'] + ' from function';
+    },
+    updateLanguage: function (e, detail, sender) {
+        this.fire('iron-signal', {
+            name: "i18n",
+            data: e.currentTarget.attributes['data-language'].value
+        });
+
+    }
+});
+</script>

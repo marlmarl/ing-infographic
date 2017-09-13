@@ -1,0 +1,225 @@
+<!doctype html>
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="ING TPA Bootstrap">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="generator" content="ING TPA Bootstrap">
+    <title>ING TPA Bootstrap</title>
+
+    <!-- Place favicon.ico in the `app/` directory -->
+
+    <!-- Chrome for Android theme color -->
+
+    <meta name="theme-color" content="#FF6200">
+
+    <!-- Web Application Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Tile color for Win8 -->
+    <meta name="msapplication-TileColor" content="#FF6200">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/ingtouch/192.png">
+    <meta name="application-name" content="ING TPA">
+
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="TPA Bootstrap">
+    <link rel="apple-touch-icon" href="images/ingtouch/192.png">
+
+    <!-- Tile icon for Win8 (144x144) -->
+    <meta name="msapplication-TileImage" content="images/ingtouch/152.png">
+
+    <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <!-- endbuild -->
+
+    <!-- Because this project uses vulcanize this should be your only html import
+         in this file. All other imports should go in elements.html -->
+    <link rel="import" href="elements/elements.html">
+
+    <!-- For shared styles, shared-styles.html import in elements.html -->
+    <style is="custom-style" include="shared-styles">
+        iron-icon.side-bar-icon {
+            --iron-icon-fill-color:var(--primary-color);
+        }
+        paper-item:hover {
+            background-color:var(--ing-grey-200);
+            font-weight:strong;
+        }
+
+        .padding-left-sm {
+            margin-left:20px;
+        }
+    </style>
+</head>
+
+<body unresolved>
+<!-- build:remove -->
+<span id="browser-sync-binding"></span>
+<!-- endbuild -->
+
+<template is="dom-bind" id="app">
+    <app-location route="{{route}}" path="/{{data.pageName}}" use-hash-as-path></app-location>
+    <app-route route="{{route}}" pattern="/:pageName" data="{{data}}"></app-route>
+
+    <tpa-globals>
+        <iron-meta key="services" value="{{services}}"></iron-meta>
+    </tpa-globals>
+
+
+    <paper-drawer-panel id="paperDrawerPanel" responsive-width="840px" force-narrow>
+        <!-- Drawer Scroll Header Panel -->
+        <paper-scroll-header-panel drawer fixed>
+
+            <!-- Drawer Toolbar -->
+            <paper-toolbar id="drawerToolbar">
+                <span class="menu-name">ING TPA Bootstrap</span>
+            </paper-toolbar>
+
+            <!-- Drawer Content -->
+            <paper-menu class="app-menu" attr-for-selected="data-route" selected="{{data.pageName}}">
+                <template as="item" is="dom-repeat" items="{{menuItems}}">
+                    <paper-item title="{{item.title}}" data-route="{{item.route}}" on-click="closeDrawer">
+                        <iron-icon class="side-bar-icon" icon="{{item.icon}}"></iron-icon>
+                        <span class="padding-left-sm">{{item.title}}</span>
+                    </paper-item>
+                </template>
+            </paper-menu>
+        </paper-scroll-header-panel>
+
+        <div main>
+            <tpa-ajax auto id="getBootstrapData" url="{{services.bootstrap}}" handle-as="json" last-response="{{bootstrapResponse}}"></tpa-ajax>
+            <app-header-layout has-scrolling-region>
+                <app-header style="box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);" effects="material" reveals>
+                    <tpa-top-bar class="paper-header"></tpa-top-bar>
+                    <tpa-nav-bar base-url="{{baseUrl}}#/" tabs="[[bootstrapResponse.tabs]]"></tpa-nav-bar>
+                </app-header>
+                <!-- Main Content -->
+                <div class="content" id="content">
+                    <neon-animated-pages id="mainPages" attr-for-selected="data-route" selected="{{data.pageName}}" fallback-selection="home" entry-animation="scale-up-animation" exit-animation="fade-out-animation">
+                        <section data-route="home">
+                            <template is="dom-if" if="{{isSelected(data.pageName, 'home')}}">
+                                <link rel="import" href="elements/tpa-pages/tpa-daily-banking.html">
+                                <tpa-daily-banking></tpa-daily-banking>
+                            </template>
+                        </section>
+
+                        <section data-route="users">
+                            <template is="dom-if" if="{{isSelected(data.pageName, 'users')}}">
+                                <link rel="import" href="elements/tpa-pages/tpa-user-page.html">
+                                <tpa-user-page></tpa-user-page>
+                            </template>
+                        </section>
+
+                        <section data-route="savingsgoals">
+                            <template is="dom-if" if="{{isSelected(data.pageName, 'savingsgoals')}}">
+                                <link rel="import" href="elements/tpa-pages/tpa-savingsgoals-page.html">
+                                <tpa-savingsgoals-page></tpa-savingsgoals-page>
+                            </template>
+                        </section>
+
+                        <section data-route="trading">
+                            <template is="dom-if" if="{{isSelected(data.pageName, 'trading')}}">
+                                <link rel="import" href="elements/tpa-pages/tpa-trading-page.html">
+                                <tpa-trading-page></tpa-trading-page>
+                            </template>
+                        </section>
+
+                        <section data-route="mortgage">
+                            <template is="dom-if" if="{{isSelected(data.pageName, 'mortgage')}}">
+                                <link rel="import" href="elements/tpa-pages/tpa-mortgage-page.html">
+                                <tpa-mortgage-page></tpa-mortgage-page>
+                            </template>
+                        </section>
+
+                        <section data-route="loans">
+                            <template is="dom-if" if="{{isSelected(data.pageName, 'loans')}}">
+                                <link rel="import" href="elements/tpa-pages/tpa-loans-page.html">
+                                <tpa-loans-page></tpa-loans-page>
+                            </template>
+                        </section>
+
+                        <section data-route="insurance">
+                            <template is="dom-if" if="{{isSelected(data.pageName, 'insurance')}}">
+                                <link rel="import" href="elements/tpa-pages/tpa-insurance-page.html">
+                                <tpa-insurance-page></tpa-insurance-page>
+                            </template>
+                        </section>
+
+                        <section data-route="contact">
+                            <template is="dom-if" if="{{isSelected(data.pageName, 'contact')}}">
+                                <link rel="import" href="elements/tpa-pages/tpa-contact-page.html">
+                                <tpa-contact-page></tpa-contact-page>
+                            </template>
+                        </section>
+
+                        <section data-route="settings">
+                            <template is="dom-if" if="{{isSelected(data.pageName, 'settings')}}">
+                                <link rel="import" href="elements/tpa-pages/tpa-settings-page.html">
+                                <tpa-settings-page></tpa-settings-page>
+                            </template>
+                        </section>
+
+                        <section data-route="feedback">
+                            <template is="dom-if" if="{{isSelected(data.pageName, 'feedback')}}">
+                                <link rel="import" href="elements/tpa-pages/tpa-feedback-page.html">
+                                <tpa-feedback-page></tpa-feedback-page>
+                            </template>
+                        </section>
+                    </neon-animated-pages>
+                </div>
+            </app-header-layout>
+        </div>
+    </paper-drawer-panel>
+
+    <paper-toast id="toast">
+        <span class="toast-hide-button" role="button" tabindex="0" onclick="app.$.toast.hide()">Ok</span>
+    </paper-toast>
+
+    <!-- Uncomment next block to enable Service Worker support (1/2) -->
+
+    <paper-toast id="caching-complete"
+                 duration="6000"
+                 text="Caching complete! This app will work offline.">
+    </paper-toast>
+    <paper-toast id="cache-updated"
+                 duration="10000"
+                 text="A new version of this app is available.">
+                 <a href="javascript:history.go(0);" style="color: #ff9933; text-decoration: none;">REFRESH</a>
+    </paper-toast>
+
+    <platinum-sw-register auto-register
+                          clients-claim
+                          skip-waiting
+                          base-uri="bower_components/platinum-sw/bootstrap"
+                          on-service-worker-installed="displayInstalledToast"
+                          on-service-worker-updated="displayUpdatedToast">
+        <platinum-sw-cache default-cache-strategy="fastest"
+                           cache-config-file="cache-config.json">
+        </platinum-sw-cache>
+    </platinum-sw-register>
+
+</template>
+
+<!-- build:js scripts/app.js -->
+<script src="scripts/app.js"></script>
+<!-- endbuild-->
+</body>
+
+</html>

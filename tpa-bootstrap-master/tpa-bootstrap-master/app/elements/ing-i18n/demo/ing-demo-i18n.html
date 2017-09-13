@@ -1,0 +1,38 @@
+<link rel="import" href="../tpa-i18n.html">
+<link rel="import" href="../../polymer/iron-signals/iron-signals.html">
+
+<dom-module id="ing-demo-i18n">
+    <template>
+        <iron-signals on-iron-signal-i18n="i18nSignal"></iron-signals>
+    </template>
+</dom-module>
+
+<script>
+Polymer({
+    is: 'ing-demo-i18n',
+    behaviors: [I18nBehavior],
+    properties: {
+        i18n: {
+            type: Object,
+            value: function() {
+                return {
+                    "en-au": {
+                        "testNestedMessage": {
+                            "nestedMessage": 'Test nested message 1'
+                        },
+                        "testMessages": 'test message 1',
+                        "test-dashes": 'this is dashed'
+                    },
+                    "en-es": {
+                        "testNestedMessage": {
+                            "nestedMessage": 'Prueba anidado mensaje 1'
+                        },
+                        "testMessages": 'mensaje de prueba 1'
+                    }
+                };
+            },
+            notify: true
+        }
+    }
+});
+</script>
