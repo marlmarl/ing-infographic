@@ -1,9 +1,0 @@
-node_modules
-dist
-bower_components
-.tmp
-.publish/
-.idea
-coverage
-app/build
-*.log

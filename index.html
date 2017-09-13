@@ -1,311 +1,641 @@
-﻿<!DOCTYPE html>
+
+<!DOCTYPE html>
 <!--[if lte IE 8]><html class="lte8" lang="en" class="no-js"><![endif]-->
 <!--[if IE 9]><html class="ie9" lang="en" class="no-js"><![endif]-->
 <!--[if gt IE 9]><!-->
 <html lang="en" class="no-js">
 <!--<![endif]-->
+
 <head>
-    <title>Old machine</title>
+   <title>Old machine</title>
 
-    <meta charset="UTF-8"><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"2abdac5c32","applicationID":"13958200","transactionName":"MwAGMEAFWkcHWkBfWApKKTJxS3VGElBXWlIUBAMBcQtaQBRWWFpSFkolFkYNV1gDSVVRUg==","queueTime":0,"applicationTime":65,"agent":"","atts":"","sslForHttp":"true"}</script><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
-	<meta name="description" content="Many aspects of our lives are about to change beyond recognition. The View’s infographic puts things in perspective."/>
+   <meta charset="UTF-8">
+   <script type="text/javascript">
+      window.NREUM || (NREUM = {});
+      NREUM.info = {
+         "beacon": "bam.nr-data.net",
+         "errorBeacon": "bam.nr-data.net",
+         "licenseKey": "2abdac5c32",
+         "applicationID": "13958200",
+         "transactionName": "MwAGMEAFWkcHWkBfWApKKTJxS3VGElBXWlIUBAMBcQtaQBRWWFpSFkolFkYNV1gDSVVRUg==",
+         "queueTime": 0,
+         "applicationTime": 65,
+         "agent": "",
+         "atts": "",
+         "sslForHttp": "true"
+      }
+   </script>
+   <script type="text/javascript">
+      window.NREUM || (NREUM = {}), __nr_require = function(e, n, t) {
+         function r(t) {
+            if (!n[t]) {
+               var o = n[t] = {
+                  exports: {}
+               };
+               e[t][0].call(o.exports, function(n) {
+                  var o = e[t][1][n];
+                  return r(o || n)
+               }, o, o.exports)
+            }
+            return n[t].exports
+         }
+         if ("function" == typeof __nr_require) return __nr_require;
+         for (var o = 0; o < t.length; o++) r(t[o]);
+         return r
+      }({
+         1: [function(e, n, t) {
+            function r() {}
 
-    <meta name="version" content="2.14.0.1"/>
-	<meta name="viewport" content="width=device-width,initial-scale=1" />
+            function o(e, n, t) {
+               return function() {
+                  return i(e, [c.now()].concat(u(arguments)), n ? null : this, t), n ? void 0 : this
+               }
+            }
+            var i = e("handle"),
+               a = e(2),
+               u = e(3),
+               f = e("ee").get("tracer"),
+               c = e("loader"),
+               s = NREUM;
+            "undefined" == typeof window.newrelic && (newrelic = s);
+            var p = ["setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace", "inlineHit", "addRelease"],
+               d = "api-",
+               l = d + "ixn-";
+            a(p, function(e, n) {
+               s[n] = o(d + n, !0, "api")
+            }), s.addPageAction = o(d + "addPageAction", !0), s.setCurrentRouteName = o(d + "routeName", !0), n.exports = newrelic, s.interaction = function() {
+               return (new r).get()
+            };
+            var m = r.prototype = {
+               createTracer: function(e, n) {
+                  var t = {},
+                     r = this,
+                     o = "function" == typeof n;
+                  return i(l + "tracer", [c.now(), e, t], r),
+                     function() {
+                        if (f.emit((o ? "" : "no-") + "fn-start", [c.now(), r, o], t), o) try {
+                           return n.apply(this, arguments)
+                        } finally {
+                           f.emit("fn-end", [c.now()], t)
+                        }
+                     }
+               }
+            };
+            a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function(e, n) {
+               m[n] = o(l + n)
+            }), newrelic.noticeError = function(e) {
+               "string" == typeof e && (e = new Error(e)), i("err", [e, c.now()])
+            }
+         }, {}],
+         2: [function(e, n, t) {
+            function r(e, n) {
+               var t = [],
+                  r = "",
+                  i = 0;
+               for (r in e) o.call(e, r) && (t[i] = n(r, e[r]), i += 1);
+               return t
+            }
+            var o = Object.prototype.hasOwnProperty;
+            n.exports = r
+         }, {}],
+         3: [function(e, n, t) {
+            function r(e, n, t) {
+               n || (n = 0), "undefined" == typeof t && (t = e ? e.length : 0);
+               for (var r = -1, o = t - n || 0, i = Array(o < 0 ? 0 : o); ++r < o;) i[r] = e[n + r];
+               return i
+            }
+            n.exports = r
+         }, {}],
+         4: [function(e, n, t) {
+            n.exports = {
+               exists: "undefined" != typeof window.performance && window.performance.timing && "undefined" != typeof window.performance.timing.navigationStart
+            }
+         }, {}],
+         ee: [function(e, n, t) {
+            function r() {}
 
-    <meta property="og:title" content="Picturing the future" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://view.ingwb.com/picturing-the-future" />
-    <meta property="og:description" content="Many aspects of our lives are about to change beyond recognition. The View’s infographic puts things in perspective." />
+            function o(e) {
+               function n(e) {
+                  return e && e instanceof r ? e : e ? f(e, u, i) : i()
+               }
 
-        <meta property="og:image" content="http://view.ingwb.com/mediaStorage/1355/8_social_view_3.jpg" />
+               function t(t, r, o, i) {
+                  if (!d.aborted || i) {
+                     e && e(t, r, o);
+                     for (var a = n(o), u = m(t), f = u.length, c = 0; c < f; c++) u[c].apply(a, r);
+                     var p = s[y[t]];
+                     return p && p.push([b, t, r, a]), a
+                  }
+               }
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Picturing the future" />
-    <meta name="twitter:url" content="http://view.ingwb.com/picturing-the-future" />
-    <meta name="twitter:description" content="Many aspects of our lives are about to change beyond recognition. The View’s infographic puts things in perspective." />
+               function l(e, n) {
+                  v[e] = m(e).concat(n)
+               }
 
-        <meta name="twitter:image" content="http://view.ingwb.com/mediaStorage/1355/8_social_view_3.jpg">
+               function m(e) {
+                  return v[e] || []
+               }
 
-    <!--[if lte IE 8]>
+               function w(e) {
+                  return p[e] = p[e] || o(t)
+               }
+
+               function g(e, n) {
+                  c(e, function(e, t) {
+                     n = n || "feature", y[t] = n, n in s || (s[n] = [])
+                  })
+               }
+               var v = {},
+                  y = {},
+                  b = {
+                     on: l,
+                     emit: t,
+                     get: w,
+                     listeners: m,
+                     context: n,
+                     buffer: g,
+                     abort: a,
+                     aborted: !1
+                  };
+               return b
+            }
+
+            function i() {
+               return new r
+            }
+
+            function a() {
+               (s.api || s.feature) && (d.aborted = !0, s = d.backlog = {})
+            }
+            var u = "nr@context",
+               f = e("gos"),
+               c = e(2),
+               s = {},
+               p = {},
+               d = n.exports = o();
+            d.backlog = s
+         }, {}],
+         gos: [function(e, n, t) {
+            function r(e, n, t) {
+               if (o.call(e, n)) return e[n];
+               var r = t();
+               if (Object.defineProperty && Object.keys) try {
+                  return Object.defineProperty(e, n, {
+                     value: r,
+                     writable: !0,
+                     enumerable: !1
+                  }), r
+               } catch (i) {}
+               return e[n] = r, r
+            }
+            var o = Object.prototype.hasOwnProperty;
+            n.exports = r
+         }, {}],
+         handle: [function(e, n, t) {
+            function r(e, n, t, r) {
+               o.buffer([e], r), o.emit(e, n, t)
+            }
+            var o = e("ee").get("handle");
+            n.exports = r, r.ee = o
+         }, {}],
+         id: [function(e, n, t) {
+            function r(e) {
+               var n = typeof e;
+               return !e || "object" !== n && "function" !== n ? -1 : e === window ? 0 : a(e, i, function() {
+                  return o++
+               })
+            }
+            var o = 1,
+               i = "nr@id",
+               a = e("gos");
+            n.exports = r
+         }, {}],
+         loader: [function(e, n, t) {
+            function r() {
+               if (!x++) {
+                  var e = h.info = NREUM.info,
+                     n = d.getElementsByTagName("script")[0];
+                  if (setTimeout(s.abort, 3e4), !(e && e.licenseKey && e.applicationID && n)) return s.abort();
+                  c(y, function(n, t) {
+                     e[n] || (e[n] = t)
+                  }), f("mark", ["onload", a() + h.offset], null, "api");
+                  var t = d.createElement("script");
+                  t.src = "https://" + e.agent, n.parentNode.insertBefore(t, n)
+               }
+            }
+
+            function o() {
+               "complete" === d.readyState && i()
+            }
+
+            function i() {
+               f("mark", ["domContent", a() + h.offset], null, "api")
+            }
+
+            function a() {
+               return E.exists && performance.now ? Math.round(performance.now()) : (u = Math.max((new Date).getTime(), u)) - h.offset
+            }
+            var u = (new Date).getTime(),
+               f = e("handle"),
+               c = e(2),
+               s = e("ee"),
+               p = window,
+               d = p.document,
+               l = "addEventListener",
+               m = "attachEvent",
+               w = p.XMLHttpRequest,
+               g = w && w.prototype;
+            NREUM.o = {
+               ST: setTimeout,
+               SI: p.setImmediate,
+               CT: clearTimeout,
+               XHR: w,
+               REQ: p.Request,
+               EV: p.Event,
+               PR: p.Promise,
+               MO: p.MutationObserver
+            };
+            var v = "" + location,
+               y = {
+                  beacon: "bam.nr-data.net",
+                  errorBeacon: "bam.nr-data.net",
+                  agent: "js-agent.newrelic.com/nr-1044.min.js"
+               },
+               b = w && g && g[l] && !/CriOS/.test(navigator.userAgent),
+               h = n.exports = {
+                  offset: u,
+                  now: a,
+                  origin: v,
+                  features: {},
+                  xhrWrappable: b
+               };
+            e(1), d[l] ? (d[l]("DOMContentLoaded", i, !1), p[l]("load", r, !1)) : (d[m]("onreadystatechange", o), p[m]("onload", r)), f("mark", ["firstbyte", u], null, "api");
+            var x = 0,
+               E = e(4)
+         }, {}]
+      }, {}, ["loader"]);
+   </script>
+   <meta name="description" content="Many aspects of our lives are about to change beyond recognition. The View’s infographic puts things in perspective." />
+
+   <meta name="version" content="2.14.0.1" />
+   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+   <meta property="og:title" content="Picturing the future" />
+   <meta property="og:type" content="website" />
+   <meta property="og:url" content="http://view.ingwb.com/picturing-the-future" />
+   <meta property="og:description" content="Many aspects of our lives are about to change beyond recognition. The View’s infographic puts things in perspective." />
+
+   <meta property="og:image" content="http://view.ingwb.com/mediaStorage/1355/8_social_view_3.jpg" />
+
+   <meta name="twitter:card" content="summary_large_image" />
+   <meta name="twitter:title" content="Picturing the future" />
+   <meta name="twitter:url" content="http://view.ingwb.com/picturing-the-future" />
+   <meta name="twitter:description" content="Many aspects of our lives are about to change beyond recognition. The View’s infographic puts things in perspective." />
+
+   <meta name="twitter:image" content="http://view.ingwb.com/mediaStorage/1355/8_social_view_3.jpg">
+
+   <!--[if lte IE 8]>
 		<link href="cssmin/all-ie.css" rel="stylesheet"/>
 
 	<![endif]-->
-	<!--[if gt IE 8]><!-->
-		<link href="cssmin/all.css" rel="stylesheet"/>
+   <!--[if gt IE 8]><!-->
+   <link href="cssmin/all.css" rel="stylesheet" />
 
-	<!--<![endif]-->
-    <script src="js/libs/modernizr.js"></script>
+   <!--<![endif]-->
+   <script src="js/libs/modernizr.js"></script>
 
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed/rss" />
+   <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed/rss" />
 </head>
 
 <body>
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-N86N7N');</script>
-    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-N86N7N" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager -->
+   <!-- Google Tag Manager -->
+   <script>
+      (function(w, d, s, l, i) {
+         w[l] = w[l] || [];
+         w[l].push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
+         });
+         var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+         j.async = true;
+         j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+         f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-N86N7N');
+   </script>
+   <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-N86N7N" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+   <!-- End Google Tag Manager -->
 
-    <header data-interaction="ui/Sticky" data-sticky-class="offscreen" class="main-header">
-        <div class="header-wrapper">
-            <div class="offscreen-wrapper">
-                <a class="site-logo" href="/">
+   <header data-interaction="ui/Sticky" data-sticky-class="offscreen" class="main-header">
+      <div class="header-wrapper">
+         <div class="offscreen-wrapper">
+            <a class="site-logo" href="/">
                     <img src="gfx/logo-ing.svg" alt="ING E-Magazine home" />
                     <img class="fallback-logo" src="gfx/logo-ing.png" alt="ING E-Magazine home" />
                 </a>
-<div class="magazine-titles">
-    <h1 class="title title--magazine-line1">the</h1>
-    <h1 class="title title--magazine-line2">view</h1>
-</div>
-                <nav>
-                    <ul>
-                        <li class="nav-item nav-item--share share-options">
-                            <button class="share-trigger" data-interaction="ui/Toggle" data-target="next-sibling" data-class-name-open="manual-open">share</button>
-<ul class="share-option-list">
-    <li><a class="share-icon email" target="_blank" href="mailto:?subject=Picturing the future&amp;body=http%3a%2f%2fview.ingwb.com%2fpicturing-the-future">Email</a></li>
-    <li><a class="share-icon twitter" target="_blank" href="https://twitter.com/share?url=http%3a%2f%2fview.ingwb.com%2fpicturing-the-future&amp;text=Picturing+the+future">Twitter</a></li>
-    <li><a class="share-icon linkedin" target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fview.ingwb.com%2fpicturing-the-future">Linkedin</a></li>
-</ul>
-
-                        </li>
-                        <li class="nav-item nav-item--ingcb">
-                            <a class="external-link" href="http://www.ingwb.com">visit ING WB</a>
-                        </li>
-    <li class="nav-item nav-item--latest-articles">
-        <button title="Latest articles on Change" class="latest-trigger" data-interaction="ui/Toggle" data-target="next-sibling" data-class-name-open="manual-open">Latest Articles</button>
-<ul class="latest-articles">
-              <li class="latest-articles_title">
-                      <h2>Latest articles on Change</h2>
-              </li>
-                  <li><a href="/a-challenging-future-for-food">A challenging future for food</a></li>
-                  <li><a href="/turnaround-in-health-care">Turnaround in health care</a></li>
-                  <li><a href="/picturing-the-future">Picturing the future</a></li>
-                  <li><a href="/challenges-and-opportunities-of-an-ageing-society">Challenges and opportunities of an ageing society</a></li>
-                  <li><a href="/is-gdp-ageing">Is GDP ageing?</a></li>
-                  <li><a href="/new-impulses-to-tmt">New impulses to TMT</a></li>
-                  <li><a href="/time-to-act-on-growing-inequality">Time to act on growing inequality</a></li>
-                  <li><a href="/rethinking-education">Rethinking education</a></li>
-                  <li><a href="/the-new-world-of-work">The new world of work</a></li>
-                  <li><a href="/as-society-gets-older">As society gets older</a></li>
-              <li class="latest-articles_ingcb">
-                  <a class="external-link" href="http://www.ingwb.com">visit ING WB</a>
-              </li>
-          </ul>
-
-    </li>
-
-                    </ul>
-                </nav>
+            <div class="magazine-titles">
+               <h1 class="title title--magazine-line1">the</h1>
+               <h1 class="title title--magazine-line2">view</h1>
             </div>
-        </div>
-    </header>
+            <nav>
+               <ul>
+                  <li class="nav-item nav-item--share share-options">
+                     <button class="share-trigger" data-interaction="ui/Toggle" data-target="next-sibling" data-class-name-open="manual-open">share</button>
+                     <ul class="share-option-list">
+                        <li><a class="share-icon email" target="_blank" href="mailto:?subject=Picturing the future&amp;body=http%3a%2f%2fview.ingwb.com%2fpicturing-the-future">Email</a></li>
+                        <li><a class="share-icon twitter" target="_blank" href="https://twitter.com/share?url=http%3a%2f%2fview.ingwb.com%2fpicturing-the-future&amp;text=Picturing+the+future">Twitter</a></li>
+                        <li><a class="share-icon linkedin" target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fview.ingwb.com%2fpicturing-the-future">Linkedin</a></li>
+                     </ul>
+
+                  </li>
+                  <li class="nav-item nav-item--ingcb">
+                     <a class="external-link" href="http://www.ingwb.com">visit ING WB</a>
+                  </li>
+                  <li class="nav-item nav-item--latest-articles">
+                     <button title="Latest articles on Change" class="latest-trigger" data-interaction="ui/Toggle" data-target="next-sibling" data-class-name-open="manual-open">Latest Articles</button>
+                     <ul class="latest-articles">
+                        <li class="latest-articles_title">
+                           <h2>Latest articles on Change</h2>
+                        </li>
+                        <li><a href="/a-challenging-future-for-food">A challenging future for food</a></li>
+                        <li><a href="/turnaround-in-health-care">Turnaround in health care</a></li>
+                        <li><a href="/picturing-the-future">Picturing the future</a></li>
+                        <li><a href="/challenges-and-opportunities-of-an-ageing-society">Challenges and opportunities of an ageing society</a></li>
+                        <li><a href="/is-gdp-ageing">Is GDP ageing?</a></li>
+                        <li><a href="/new-impulses-to-tmt">New impulses to TMT</a></li>
+                        <li><a href="/time-to-act-on-growing-inequality">Time to act on growing inequality</a></li>
+                        <li><a href="/rethinking-education">Rethinking education</a></li>
+                        <li><a href="/the-new-world-of-work">The new world of work</a></li>
+                        <li><a href="/as-society-gets-older">As society gets older</a></li>
+                        <li class="latest-articles_ingcb">
+                           <a class="external-link" href="http://www.ingwb.com">visit ING WB</a>
+                        </li>
+                     </ul>
+
+                  </li>
+
+               </ul>
+            </nav>
+         </div>
+      </div>
+   </header>
 
 
-	<main class="article-page article-page--none">
+   <main class="article-page article-page--none">
 
-		<header>
-			<div class="cover" style="background-image: url('/imagegen.ashx?width=1600&image=/mediaStorage/1361/article_3_1900x400.png')">
-				<div class="cover_titles">
-														</div>
-				<nav class="cover_article-navigation">
-					<a class="article-navigation article-navigation--home" title="Go back to homepage" href="/"><span>Back home</span></a>
-					<a class="article-navigation article-navigation--next" title="Go to next article" href="/the-new-world-of-work"><span>next<br>article</span></a>
-					<a class="article-navigation article-navigation--previous" title="Go to previous article" href="/is-gdp-ageing"><span>previous<br>article</span></a>
-				</nav>
-			</div>
-			<div class="contained-content contained-content--article article_titles">
- <h3 class="title title--chapeau cover_author">INFOGRAPHIC</h3>              <h1 class="title title--article-main">Picturing the future</h1>             			</div>
-		</header>
+      <!--machine section-->
+      <header>
+         <div class="cover" style="background-image: url('img/hero2.png')">
+            <div class="cover_titles">
+            </div>
+            <nav class="cover_article-navigation">
+               <a class="article-navigation article-navigation--home" title="Go back to homepage" href="/"><span>Back home</span></a>
+               <a class="article-navigation article-navigation--next" title="Go to next article" href="/the-new-world-of-work"><span>next<br>article</span></a>
+               <a class="article-navigation article-navigation--previous" title="Go to previous article" href="/is-gdp-ageing"><span>previous<br>article</span></a>
+            </nav>
+         </div>
+         <div class="contained-content contained-content--article article_titles">
+            <h3 class="title title--chapeau cover_author">INFOGRAPHIC</h3>
+            <h1 class="title title--article-main">Listen to the old machine telling tales about the future...</h1> </div>
+      </header>
 
-		<div class="contained-content contained-content--article">
-            <aside>
-                <ul class="share-options share-options--article">
-    <li><a class="share-icon email" target="_blank" href="mailto:?subject=Picturing the future&amp;body=http%3a%2f%2fview.ingwb.com%2fpicturing-the-future"></a></li>
-    <li><a class="share-icon twitter" target="_blank" href="https://twitter.com/share?url=http%3a%2f%2fview.ingwb.com%2fpicturing-the-future&amp;text=Picturing+the+future"></a></li>
-    <li><a class="share-icon linkedin" target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fview.ingwb.com%2fpicturing-the-future"></a></li>
-</ul>
+      <div class="contained-content contained-content--article">
 
-            </aside>
+         <article>
 
-			<article>
+            <section class="article_intro">
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ligula lacus, vulputate non leo a, mattis hendrerit ante. Curabitur sit amet condimentum nisl. Mauris non nunc lorem. Vestibulum vel mauris non neque convallis dignissim. Pellentesque semper, turpis id volutpat accumsan, augue lectus varius neque, id fringilla ipsum leo sit amet erat. Nam pellentesque lacus arcu, et molestie lacus placerat nec. Quisque ac tristique urna.<p>
+            </section>
 
-				<section class="article_intro">
-					7 facts that shape our future:
-				</section>
-
-<section class="article-content_text">
-	<p><strong>1. <span>The workforce is set to change beyond recognition</span><br /></strong></p>
-<p><span>The workforce is set to change beyond recognition. Almost every region in the world is getting older: in Europe 34% of the population will be over 60 years old by 2050.</span></p>
-</section>
-<figure class="article-content_unprocessed-image">
-    <img src="img/aging.gif" />
-</figure><section class="article-content_text">
-	<hr class="text_horizontal-rule">
-<p><strong>2. <span>People’s working lives are less regimented than in the past</span><br></strong></p>
-<p><span>People’s working lives are less regimented than in the past, which has both positive and negative consequences: 21% of workers now regularly work shifts and 30% work on Sundays.</span></p>
-</section>
-<figure class="article-content_unprocessed-image">
-    <img src="img/working-live_2.gif" />
-</figure><section class="article-content_text">
-	<hr class="text_horizontal-rule">
-<p><strong>3. <span>Society is becoming more divided when it comes to wealth</span><br></strong></p>
-<p><span>Society is becoming more divided. The richest 1% of Europeans hold almost a third of the region’s wealth, while the bottom 40% of the population share less than 1%.</span></p>
-</section>
-<figure class="article-content_unprocessed-image">
-    <img src="img/wealth.gif" />
-</figure><section class="article-content_text">
-	<hr class="text_horizontal-rule">
-<p><strong>4. <span>Artificial intelligence and automation</span> are on the rise<br></strong></p>
-<p><span>Innovations such as artificial intelligence and automation could eliminate 57% of the jobs as we now know them in rich countries, but those jobs could be replaced by new employment.</span></p>
-</section>
-<figure class="article-content_unprocessed-image">
-    <img src="img/employment.gif" />
-</figure><section class="article-content_text">
-	<hr class="text_horizontal-rule">
-<p><strong><span>5. The way we learn needs to change</span></strong></p>
-<p><span>The way we learn may need to change to encourage creativity and better communication skills. Seven in 10 employers say students aren’t ready for today’s dynamic workplace.</span></p>
-</section>
-<figure class="article-content_unprocessed-image">
-    <img src="img/learning.gif" />
-</figure><section class="article-content_text">
-	<hr class="text_horizontal-rule">
-<p><strong><span>6. Business models are being revolutionised</span></strong></p>
-<p><span>Business models are being revolutionised. By 2025, the European sharing economy could facilitate €570 billion of transactions and generate €80 billion of revenues, rivalling traditional companies.</span></p>
-</section>
-<figure class="article-content_unprocessed-image">
-    <img src="img/sharing-economy.gif" />
-</figure><section class="article-content_text">
-	<hr class="text_horizontal-rule">
-<p><strong>7. The total spending power of consumers aged 60 and older will almost double within a decade</strong></p>
-<p>Changing demographics offer potentially huge opportunities for various sectors by the end of this decade, especially healthcare (nursing homes, hospital and physician services, in-home health services). The total spending power of consumers aged 60 and older will hit €13,8 trillion globally, up from €7,3 trillion in 2010.</p>
-</section>
-<figure class="article-content_unprocessed-image">
-    <img src="img/sector-opportunities.gif" />
-</figure><section class="article-content_text">
-	<hr class="text_horizontal-rule">
-<ul>
-<li>https://esa.un.org/unpd/wpp/Publications/, accessed January 12, 2017</li>
-<li>https://www.eurofound.europa.eu/sites/default/files/ef_publication/field_ef_document/ef1649en.pdf</li>
-<li>https://www.oxfam.org/en/research/europe-many-not-few</li>
-<li>Spinney, Kikkerland Design Inc., Designer: Chico Bicalho</li>
-<li>www.worldbank.org/en/publication/wdr2016, accessed August 23, 2016</li>
-<li>http://www.raconteur.net/technology/learning-new-skills-to-spark-creativity</li>
-<li>http://www.pwc.co.uk/issues/megatrends/collisions/sharingeconomy/future-of-the-sharing-economy-in-europe-2016.html</li>
-<li>https://www.forbes.com/sites/nextavenue/2016/05/09/how-to-make-money-from-the-global-aging-megatrend/#39b8a8755a41</li>
-</ul>
-</section>
-
-			    <nav class="article_article-navigation">
-			        <a class="article-navigation article-navigation--next" title="Go to next article" href="/the-new-world-of-work"><span>next<br> article</span></a>
-			        <a class="article-navigation article-navigation--previous" title="Go to previous article" href="/is-gdp-ageing"><span>previous<br> article</span></a>
-			    </nav>
-			</article>
-
-            <section class="article-content_related-articles" data-interaction="ui/ClickableCards">
-        <h2>Suggested articles for you</h2>
-
-    <section class="article-cards">
-            <article class="article-card">
-                    <figure class="article-card-visual"
-                             style="background-image: url('img/img1.jpg)" >
-                        <div class="card-visual_placeholder"></div>
-                    </figure>
-
-                <h1 class="article-card_title">As society gets older</h1>
-
-                <div class="article-card_content">
-                    Changing demographics present huge challenges. To overcome them, we need to prepare, be flexible and think more creatively.
+            <iframe class="machine-frame" scrolling="no" frameborder="0" src="infographic/index.html" title="infographic" width="100%" height="100%">
+                <p>Your browser doe frameborder="0" s not support iframes.</p>
+            </iframe>
 
 
-                </div>
+         <!--   <section class="article-content_text">
+               <p><strong>1. <span>The workforce is set to change beyond recognition</span><br /></strong></p>
+               <p><span>The workforce is set to change beyond recognition. Almost every region in the world is getting older: in Europe 34% of the population will be over 60 years old by 2050.</span></p>
+            </section>
+            <figure class="article-content_unprocessed-image">
+               <img src="img/aging.gif" />
+            </figure>-->
+         </article>
+      </div>
 
-                    <a class="article-card_cta link--read-more" href="/as-society-gets-older">Read more</a>
-            </article>
-            <article class="article-card">
-                    <figure class="article-card-visual"
-                             style="background-image: url('/ImageGen.ashx?image=/mediaStorage/1331/8_social_view_4.jpg&width=480')" >
-                        <div class="card-visual_placeholder"></div>
-                    </figure>
+      <!--ants section-->
+      <header>
+         <div class="cover" style="background-image: url('img/hero.png')">
+            <div class="cover_titles">
+            </div>
+         <!--   <nav class="cover_article-navigation">
+               <a class="article-navigation article-navigation--home" title="Go back to homepage" href="/"><span>Back home</span></a>
+               <a class="article-navigation article-navigation--next" title="Go to next article" href="/the-new-world-of-work"><span>next<br>article</span></a>
+               <a class="article-navigation article-navigation--previous" title="Go to previous article" href="/is-gdp-ageing"><span>previous<br>article</span></a>
+            </nav>-->
+         </div>
+         <div class="contained-content contained-content--article article_titles">
+            <h3 class="title title--chapeau cover_author">INFOGRAPHIC</h3>
+            <h1 class="title title--article-main">Picturing the future</h1> </div>
+      </header>
 
-                <h1 class="article-card_title">The new world of work</h1>
+      <div class="contained-content contained-content--article">
+         <aside>
+            <ul class="share-options share-options--article">
+               <li><a class="share-icon email" target="_blank" href="mailto:?subject=Picturing the future&amp;body=http%3a%2f%2fview.ingwb.com%2fpicturing-the-future"></a></li>
+               <li><a class="share-icon twitter" target="_blank" href="https://twitter.com/share?url=http%3a%2f%2fview.ingwb.com%2fpicturing-the-future&amp;text=Picturing+the+future"></a></li>
+               <li><a class="share-icon linkedin" target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fview.ingwb.com%2fpicturing-the-future"></a></li>
+            </ul>
 
-                <div class="article-card_content">
-                    <p>Despite some worrying trends, jobs could become more rewarding and stimulating as companies compete to attract and retain talented workers.</p>
+         </aside>
+
+         <article>
+
+            <section class="article_intro">
+               7 facts that shape our future:
+            </section>
+
+            <section class="article-content_text">
+               <p><strong>1. <span>The workforce is set to change beyond recognition</span><br /></strong></p>
+               <p><span>The workforce is set to change beyond recognition. Almost every region in the world is getting older: in Europe 34% of the population will be over 60 years old by 2050.</span></p>
+            </section>
+            <figure class="article-content_unprocessed-image">
+               <img src="img/aging.gif" />
+            </figure>
+            <section class="article-content_text">
+               <hr class="text_horizontal-rule">
+               <p><strong>2. <span>People’s working lives are less regimented than in the past</span><br></strong></p>
+               <p><span>People’s working lives are less regimented than in the past, which has both positive and negative consequences: 21% of workers now regularly work shifts and 30% work on Sundays.</span></p>
+            </section>
+            <figure class="article-content_unprocessed-image">
+               <img src="img/working-live_2.gif" />
+            </figure>
+            <section class="article-content_text">
+               <hr class="text_horizontal-rule">
+               <p><strong>3. <span>Society is becoming more divided when it comes to wealth</span><br></strong></p>
+               <p><span>Society is becoming more divided. The richest 1% of Europeans hold almost a third of the region’s wealth, while the bottom 40% of the population share less than 1%.</span></p>
+            </section>
+            <figure class="article-content_unprocessed-image">
+               <img src="img/wealth.gif" />
+            </figure>
+            <section class="article-content_text">
+               <hr class="text_horizontal-rule">
+               <p><strong>4. <span>Artificial intelligence and automation</span> are on the rise<br></strong></p>
+               <p><span>Innovations such as artificial intelligence and automation could eliminate 57% of the jobs as we now know them in rich countries, but those jobs could be replaced by new employment.</span></p>
+            </section>
+            <figure class="article-content_unprocessed-image">
+               <img src="img/employment.gif" />
+            </figure>
+            <section class="article-content_text">
+               <hr class="text_horizontal-rule">
+               <p><strong><span>5. The way we learn needs to change</span></strong></p>
+               <p><span>The way we learn may need to change to encourage creativity and better communication skills. Seven in 10 employers say students aren’t ready for today’s dynamic workplace.</span></p>
+            </section>
+            <figure class="article-content_unprocessed-image">
+               <img src="img/learning.gif" />
+            </figure>
+            <section class="article-content_text">
+               <hr class="text_horizontal-rule">
+               <p><strong><span>6. Business models are being revolutionised</span></strong></p>
+               <p><span>Business models are being revolutionised. By 2025, the European sharing economy could facilitate €570 billion of transactions and generate €80 billion of revenues, rivalling traditional companies.</span></p>
+            </section>
+            <figure class="article-content_unprocessed-image">
+               <img src="img/sharing-economy.gif" />
+            </figure>
+            <section class="article-content_text">
+               <hr class="text_horizontal-rule">
+               <p><strong>7. The total spending power of consumers aged 60 and older will almost double within a decade</strong></p>
+               <p>Changing demographics offer potentially huge opportunities for various sectors by the end of this decade, especially healthcare (nursing homes, hospital and physician services, in-home health services). The total spending power of consumers
+                  aged 60 and older will hit €13,8 trillion globally, up from €7,3 trillion in 2010.</p>
+            </section>
+            <figure class="article-content_unprocessed-image">
+               <img src="img/sector-opportunities.gif" />
+            </figure>
+            <section class="article-content_text">
+               <hr class="text_horizontal-rule">
+               <ul>
+                  <li>https://esa.un.org/unpd/wpp/Publications/, accessed January 12, 2017</li>
+                  <li>https://www.eurofound.europa.eu/sites/default/files/ef_publication/field_ef_document/ef1649en.pdf</li>
+                  <li>https://www.oxfam.org/en/research/europe-many-not-few</li>
+                  <li>Spinney, Kikkerland Design Inc., Designer: Chico Bicalho</li>
+                  <li>www.worldbank.org/en/publication/wdr2016, accessed August 23, 2016</li>
+                  <li>http://www.raconteur.net/technology/learning-new-skills-to-spark-creativity</li>
+                  <li>http://www.pwc.co.uk/issues/megatrends/collisions/sharingeconomy/future-of-the-sharing-economy-in-europe-2016.html</li>
+                  <li>https://www.forbes.com/sites/nextavenue/2016/05/09/how-to-make-money-from-the-global-aging-megatrend/#39b8a8755a41</li>
+               </ul>
+            </section>
+
+            <nav class="article_article-navigation">
+               <a class="article-navigation article-navigation--next" title="Go to next article" href="/the-new-world-of-work"><span>next<br> article</span></a>
+               <a class="article-navigation article-navigation--previous" title="Go to previous article" href="/is-gdp-ageing"><span>previous<br> article</span></a>
+            </nav>
+         </article>
+
+         <section class="article-content_related-articles" data-interaction="ui/ClickableCards">
+            <h2>Suggested articles for you</h2>
+
+            <section class="article-cards">
+               <article class="article-card">
+                  <figure class="article-card-visual" style="background-image: url('img/img1.jpg)">
+                     <div class="card-visual_placeholder"></div>
+                  </figure>
+
+                  <h1 class="article-card_title">As society gets older</h1>
+
+                  <div class="article-card_content">
+                     Changing demographics present huge challenges. To overcome them, we need to prepare, be flexible and think more creatively.
 
 
-                </div>
+                  </div>
 
-                    <a class="article-card_cta link--read-more" href="/the-new-world-of-work">Read more</a>
-            </article>
-            <article class="article-card">
-                    <figure class="article-card-visual"
-                             style="background-image: url('/ImageGen.ashx?image=/mediaStorage/1342/8_social_view_5.jpg&width=480')" >
-                        <div class="card-visual_placeholder"></div>
-                    </figure>
+                  <a class="article-card_cta link--read-more" href="/as-society-gets-older">Read more</a>
+               </article>
+               <article class="article-card">
+                  <figure class="article-card-visual" style="background-image: url('/ImageGen.ashx?image=/mediaStorage/1331/8_social_view_4.jpg&width=480')">
+                     <div class="card-visual_placeholder"></div>
+                  </figure>
 
-                <h1 class="article-card_title">Challenges and opportunities of an ageing society</h1>
+                  <h1 class="article-card_title">The new world of work</h1>
 
-                <div class="article-card_content">
-                    <p>Changing demographics will require companies to rethink their workforces but also create opportunities for nimble firms.</p>
+                  <div class="article-card_content">
+                     <p>Despite some worrying trends, jobs could become more rewarding and stimulating as companies compete to attract and retain talented workers.</p>
 
 
-                </div>
+                  </div>
 
-                    <a class="article-card_cta link--read-more" href="/challenges-and-opportunities-of-an-ageing-society">Read more</a>
-            </article>
-    </section>
-</section>
+                  <a class="article-card_cta link--read-more" href="/the-new-world-of-work">Read more</a>
+               </article>
+               <article class="article-card">
+                  <figure class="article-card-visual" style="background-image: url('/ImageGen.ashx?image=/mediaStorage/1342/8_social_view_5.jpg&width=480')">
+                     <div class="card-visual_placeholder"></div>
+                  </figure>
 
-		</div>
+                  <h1 class="article-card_title">Challenges and opportunities of an ageing society</h1>
 
-	</main>
+                  <div class="article-card_content">
+                     <p>Changing demographics will require companies to rethink their workforces but also create opportunities for nimble firms.</p>
 
-<a class="bookmark" id="footer-bookmark" href=""></a>
 
-<section class="outro">
-    <div class="inner">
-        <article class="colofon">
+                  </div>
+
+                  <a class="article-card_cta link--read-more" href="/challenges-and-opportunities-of-an-ageing-society">Read more</a>
+               </article>
+            </section>
+         </section>
+
+      </div>
+
+   </main>
+
+   <a class="bookmark" id="footer-bookmark" href=""></a>
+
+   <section class="outro">
+      <div class="inner">
+         <article class="colofon">
             <p>The View is the online magazine of ING Wholesale Banking</p>
-        </article>
-        <article class="page-share-options">
+         </article>
+         <article class="page-share-options">
             <ul class="share-option-list">
-    <li><span class="share-text">SHARE</span></li>
-    <li><a class="share-icon email" target="_blank" href="mailto:?subject=Picturing the future&amp;body=http%3a%2f%2fview.ingwb.com%2fpicturing-the-future">Email</a></li>
-    <li><a class="share-icon twitter" target="_blank" href="https://twitter.com/share?url=http%3a%2f%2fview.ingwb.com%2fpicturing-the-future&amp;text=Picturing+the+future">Twitter</a></li>
-    <li><a class="share-icon linkedin" target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fview.ingwb.com%2fpicturing-the-future">LinkedIn</a></li>
-</ul>
+               <li><span class="share-text">SHARE</span></li>
+               <li><a class="share-icon email" target="_blank" href="mailto:?subject=Picturing the future&amp;body=http%3a%2f%2fview.ingwb.com%2fpicturing-the-future">Email</a></li>
+               <li><a class="share-icon twitter" target="_blank" href="https://twitter.com/share?url=http%3a%2f%2fview.ingwb.com%2fpicturing-the-future&amp;text=Picturing+the+future">Twitter</a></li>
+               <li><a class="share-icon linkedin" target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fview.ingwb.com%2fpicturing-the-future">LinkedIn</a></li>
+            </ul>
 
-        </article>
-        <article class="subscribe">
+         </article>
+         <article class="subscribe">
             <div id="left">
-                <figure class="action-icon">
-                    <figcaption>SIGN UP FOR OUR NEWSLETTER</figcaption>
-                </figure>
+               <figure class="action-icon">
+                  <figcaption>SIGN UP FOR OUR NEWSLETTER</figcaption>
+               </figure>
             </div>
             <div id="right">
-                <form method="POST" action="/subscribe/updates" data-interaction="ui/AjaxSubmit">
-                    <input class="action-mail-input" name="subscribe-updates" placeholder="Your e-mail address" type="text" />
-                    <button class="button" type="submit">Subscribe</button>
-                    <p class="footer-note">* We use your email address only to inform you about updates on our web series. We do not share, sell or use your data for other purposes.</p>
-                </form>
+               <form method="POST" action="/subscribe/updates" data-interaction="ui/AjaxSubmit">
+                  <input class="action-mail-input" name="subscribe-updates" placeholder="Your e-mail address" type="text" />
+                  <button class="button" type="submit">Subscribe</button>
+                  <p class="footer-note">* We use your email address only to inform you about updates on our web series. We do not share, sell or use your data for other purposes.</p>
+               </form>
             </div>
-        </article>
-    </div>
-</section>
+         </article>
+      </div>
+   </section>
 
-<footer class="main-footer">
-	<ul>
-		<li>
-			&copy; 2017 ING Bank N.V.
-		</li>
-			<li><a href="http://www.ingwb.com">Wholesale Banking</a></li>
-			<li><a href="http://www.ingwb.com/legal/privacy-and-cookie-statement">Privacy Statement</a></li>
-	</ul>
-</footer>
+   <footer class="main-footer">
+      <ul>
+         <li>
+            &copy; 2017 ING Bank N.V.
+         </li>
+         <li><a href="http://www.ingwb.com">Wholesale Banking</a></li>
+         <li><a href="http://www.ingwb.com/legal/privacy-and-cookie-statement">Privacy Statement</a></li>
+      </ul>
+   </footer>
 
-    <script>
-        var require = { urlArgs: 'v=2.14.0.1' };
-    </script>
-    <script src="js/libs/require.js" data-main="js/main"></script>
+   <script>
+      var require = {
+         urlArgs: 'v=2.14.0.1'
+      };
+   </script>
+   <script src="js/libs/require.js" data-main="js/main"></script>
 </body>
+
 </html>
