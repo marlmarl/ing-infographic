@@ -1,0 +1,205 @@
+.iframe-container {
+   background-color: yellow;
+   height: 100%;
+
+}
+
+.flex-container {
+   display:flex;
+   flex-direction:row;
+   align-items: stretch;
+}
+
+.facts {
+   width:50%;
+   height: 100%;
+   background-color: pink;
+
+}
+.infograpic-text {
+   margin-top:10%;
+   margin-left:10%;
+}
+.infographic-chapeau{
+   margin: 0 0 1em 0;
+   font-size: 1em;
+   font-weight: lighter;
+   color: #767676;
+   letter-spacing: .15em;
+   text-transform: uppercase
+}
+.infographic-title{
+
+}
+.infographic-subtitle{
+   font-size: 1.13333em;
+   line-height: 1.47059em;
+   font-weight: normal;
+}
+
+.fact-number {
+   color:#ff7700;
+   font-weight:normal;
+   text-align: center;
+}
+.infographic-fact {
+
+
+}
+.machine-container {
+   background-color: lightgrey;
+   position: relative;
+   top:0;
+   left:0;
+   width:50%;
+}
+
+.machine {
+   background-color: blue;
+   margin:0 auto;
+   max-width:324px;
+ }
+
+.machine-layer {
+   position: absolute;
+   top:0;
+   left:0;
+   background-size:contain;
+   background-repeat: no-repeat;
+   background-position: center;
+   height: 100%;
+   width:100%;
+   max-width:324px;
+}
+
+.machine-part {
+   position: absolute;
+   background-size:contain;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+.imgdummy {
+width:100%;
+max-width:324px;
+}
+
+/*.machine-body {
+   background-image: url('../img/machine.png');
+   pointer-events: none;
+}*/
+
+/*.biggear1 {
+   background-image: url('../img/biggear1.png');
+}*/
+
+/*.biggear {
+   top:44%;
+   left:47%;
+   height:30%;
+   width:30%;
+   background-image: url('../img/biggear.png');
+   animation-name: rotate;
+   animation-direction: reverse;
+   animation-duration: 20s;
+   animation-iteration-count: infinite;
+   animation-timing-function: linear;
+}
+
+
+.smallgear {
+   background-image: url('../img/smallgear.png');
+   top:26%;
+   left:47%;
+   height:24%;
+   width:24%;
+   animation-name: rotate;
+   animation-duration: 10s;
+   animation-iteration-count: infinite;
+   animation-timing-function: linear;
+}
+
+.biggear:hover {
+   animation-direction:reverse;
+}
+.smallgear:hover {
+   animation-direction:reverse;
+}
+
+.screen {
+   background-image: url('../img/screen.png');
+    pointer-events: none;
+}
+
+.tap {
+   background-image:  url('../img/tap.png');
+   height:10%;
+   width:10%;
+   left:25%;
+}
+
+.tap:hover {
+   animation-name: rotate;
+   animation-duration: 1s;
+   animation-iteration-count: 1;
+   animation-timing-function:ease-in-out;
+
+}
+
+.tap1 {
+   top:17%;
+}
+.tap2 {
+   top:26%;
+}
+.tap3 {
+   top:34%;
+}
+
+.tap4 {
+   top:43%;
+}
+
+.tap5 {
+   top:52%;
+}
+
+.tap6 {
+   top:60%;
+}
+
+.top-tap {
+   background-image:  url('../img/top-tap.png');
+   height:12%;
+   width:12%;
+   left:42.5%;
+   top:-1%;
+
+}
+*/
+
+
+
+
+/*keyframes*/
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
